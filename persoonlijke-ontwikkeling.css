@@ -1,0 +1,210 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.event-section {
+    margin-bottom: 4rem;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.event-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.event-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.event-title {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.event-content {
+    padding: 2.5rem;
+    background: #f8f9fa;
+}
+
+.event-description {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.event-description:hover {
+    transform: translateX(5px);
+}
+
+.event-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.detail-group {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.detail-group:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.detail-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.detail-title::before {
+    content: '';
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.detail-content {
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+.location-info {
+    margin-bottom: 0.8rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.location-info:hover {
+    background: #e8f4f8;
+    transform: translateX(3px);
+}
+
+.date-time {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.date {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.time {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.back-button {
+    display: block;
+    width: 220px;
+    margin: 3rem auto 0;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .event-details {
+        grid-template-columns: 1fr;
+    }
+
+    .event-title {
+        font-size: 1.8rem;
+    }
+
+    .event-content {
+        padding: 1.5rem;
+    }
+
+    .detail-group {
+        padding: 1.5rem;
+    }
+} 
