@@ -21,17 +21,22 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
     text-align: center;
     color: var(--primary-color);
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
     font-weight: 600;
+    width: 100%;
+    max-width: 1300px;
 }
 
 .content {
@@ -39,7 +44,9 @@ h1 {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 8px var(--shadow-color);
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 1300px;
 }
 
 .back-button {
@@ -120,7 +127,8 @@ h1 {
     }
     
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
     }
 
     .image-text {
@@ -129,6 +137,168 @@ h1 {
     }
 
     .content {
-        padding: 1.5rem;
+        padding: 1.2rem;
+        margin-top: 1rem;
+    }
+}
+
+.seminar-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+    background: white;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.seminar-table th,
+.seminar-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--shadow-color);
+}
+
+.seminar-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 1.2rem 1rem;
+}
+
+.seminar-table tr:last-child td {
+    border-bottom: none;
+}
+
+.seminar-table tr:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.seminar-table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.seminar-table td:first-child {
+    width: 100px;
+    padding: 0.8rem;
+}
+
+.seminar-table td:nth-child(2) {
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 250px;
+    font-size: 1rem;
+}
+
+.seminar-table td:nth-child(3) {
+    min-width: 180px;
+    line-height: 1.4;
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+.seminar-table td:nth-child(3) br {
+    content: "";
+    display: block;
+    margin: 0.3rem 0;
+}
+
+.seminar-table td:nth-child(5) {
+    min-width: 300px;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.company-location-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0 !important;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.header-content span {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.1rem;
+}
+
+.header-content span:last-child {
+    border-bottom: none;
+}
+
+.company-location-cell {
+    padding: 0.8rem !important;
+    vertical-align: top;
+    min-width: 250px;
+}
+
+.company {
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 0.6rem;
+    border-bottom: 1px solid var(--shadow-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+}
+
+.location {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .seminar-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .seminar-table th,
+    .seminar-table td {
+        padding: 0.8rem;
+    }
+
+    .seminar-table td:first-child {
+        min-width: 100px;
+    }
+
+    .seminar-table td:nth-child(2) {
+        min-width: 200px;
+    }
+
+    .seminar-table td:nth-child(3) {
+        min-width: 160px;
+    }
+
+    .seminar-table td:nth-child(5) {
+        min-width: 250px;
+    }
+
+    .company-location-cell {
+        min-width: 200px;
+    }
+    
+    .company {
+        font-size: 1rem;
+    }
+    
+    .location {
+        font-size: 0.9rem;
     }
 } 
