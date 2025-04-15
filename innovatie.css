@@ -1,18 +1,54 @@
+body {
+    background-color: #101820;
+    color: #e0e6ed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(135deg, #101820 90%, rgba(0,230,118,0.08) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,230,118,0.08) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,230,118,0.08) 40px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-attachment: fixed;
+}
+
+:root {
+    --primary-color: #1a2634;
+    --secondary-color: #00e676;
+    --background-color: #101820;
+    --text-color: #e0e6ed;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --overlay-color: rgba(0, 230, 118, 0.08);
+    --accent-color: #2196f3;
+    --terminal-bg: #181f2a;
+    --terminal-border: #00e676;
+    --card-bg: #16202b;
+    --circuit-line: rgba(0,230,118,0.08);
+    --font-mono: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2.5rem 3.5rem 1.5rem 3.5rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-mono);
+    color: var(--secondary-color);
+    letter-spacing: 1px;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
-    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 1.2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
-.event-section {
-    margin-bottom: 4rem;
+.event-section, .detail-group, .event-content {
+    background: var(--card-bg);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px var(--shadow-color);
+    border: 1.5px solid var(--terminal-border);
+    color: var(--text-color);
 }
 
 .event-header {
@@ -20,13 +56,18 @@ h1 {
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--secondary-color);
+    font-family: var(--font-mono);
+    border-radius: 14px 14px 0 0;
+    padding: 1.2rem 1.5rem;
 }
 
 .event-icon {
     width: 50px;
     height: 50px;
-    background: var(--primary-color);
-    color: white;
+    background: var(--secondary-color);
+    color: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -35,23 +76,20 @@ h1 {
 }
 
 .event-title {
-    font-size: 1.8rem;
-    color: var(--primary-color);
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-family: var(--font-mono);
     margin: 0;
 }
 
 .event-content {
-    background: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border: none;
     padding: 2rem;
 }
 
 .event-description {
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+    color: #b2c2d6;
+    font-size: 1rem;
 }
 
 .event-details {
@@ -61,20 +99,19 @@ h1 {
 }
 
 .detail-group {
-    background: #f8f9fa;
     padding: 1.5rem;
-    border-radius: 6px;
 }
 
 .detail-title {
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: var(--font-mono);
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
 .detail-content {
-    color: #555;
+    color: #b2c2d6;
     line-height: 1.5;
 }
 
@@ -83,29 +120,31 @@ h1 {
     width: 200px;
     margin: 3rem auto 0;
     padding: 1rem;
-    background: var(--primary-color);
-    color: white;
+    background: var(--terminal-bg);
+    color: var(--secondary-color);
     text-align: center;
     text-decoration: none;
     border-radius: 6px;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+    border: 1.5px solid var(--terminal-border);
+    font-family: var(--font-mono);
 }
 
 .back-button:hover {
-    background: #2c3e50;
+    background: var(--secondary-color);
+    color: var(--terminal-bg);
+    border-color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
     }
-
     .event-details {
         grid-template-columns: 1fr;
     }
-
     .event-title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 } 

@@ -1,121 +1,211 @@
+body {
+    background-color: #101820;
+    color: #e0e6ed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(135deg, #101820 90%, rgba(0,230,118,0.08) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,230,118,0.08) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,230,118,0.08) 40px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-attachment: fixed;
+}
+
+:root {
+    --primary-color: #1a2634;
+    --secondary-color: #00e676;
+    --background-color: #101820;
+    --text-color: #e0e6ed;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --overlay-color: rgba(0, 230, 118, 0.08);
+    --accent-color: #2196f3;
+    --terminal-bg: #181f2a;
+    --terminal-border: #00e676;
+    --card-bg: #16202b;
+    --circuit-line: rgba(0,230,118,0.08);
+    --font-mono: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2.5rem 3.5rem 1.5rem 3.5rem;
+    box-shadow: 0 4px 18px 0 rgba(0,0,0,0.10);
+    border-radius: 12px;
+    background: none;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-mono);
+    color: var(--secondary-color);
+    letter-spacing: 1px;
 }
 
 h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 1.2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    position: relative;
+}
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color) 60%, var(--accent-color) 100%);
+    margin: 0.5rem 0 0 0;
+    border-radius: 1.5px;
+    opacity: 0.5;
 }
 
-.trip-card {
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.trip-card, .location-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px 0 var(--shadow-color);
+    border: 1.5px solid var(--terminal-border);
+    color: var(--text-color);
     overflow: hidden;
     margin-bottom: 2rem;
+    transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s, border-color 0.18s;
+}
+.trip-card:hover {
+    box-shadow: 0 4px 12px 0 var(--shadow-color);
+    border-color: var(--terminal-border);
 }
 
 .trip-header {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
-    padding: 2rem;
-    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color) 80%, var(--secondary-color) 100%);
+    color: var(--secondary-color);
+    padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+    font-family: var(--font-mono);
+    box-shadow: 0 2px 8px 0 rgba(0,230,118,0.08);
     position: relative;
+}
+.trip-header::after {
+    content: '';
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    bottom: 0;
+    height: 4px;
+    border-radius: 0 0 6px 6px;
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    opacity: 0.10;
 }
 
 .trip-header h2 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    font-family: var(--font-mono);
+    margin: 0 0 0.3rem 0;
+    letter-spacing: 1px;
+    text-shadow: none;
 }
 
 .trip-period {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    opacity: 0.9;
+    margin-top: 0.7rem;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    color: var(--accent-color);
+    font-family: var(--font-mono);
 }
 
 .trip-content {
-    padding: 2rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    background: transparent;
 }
 
 .trip-description {
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+    color: #b2c2d6;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
     line-height: 1.6;
-    color: #34495e;
 }
 
 .locations-section h3 {
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    text-align: center;
+    color: var(--secondary-color);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .location-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.2rem;
 }
 
 .location-card {
-    background: #f8f9fa;
+    background: var(--terminal-bg);
     border-radius: 10px;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.2rem 1.2rem 1rem 1.2rem;
+    box-shadow: 0 1px 8px 0 var(--shadow-color);
+    border: 1.5px solid var(--terminal-border);
+    transition: transform 0.15s cubic-bezier(.4,2,.6,1), box-shadow 0.15s, border-color 0.15s;
+    color: var(--text-color);
+    position: relative;
 }
-
 .location-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px 0 var(--shadow-color);
+    border-color: var(--terminal-border);
 }
 
 .location-card h4 {
-    color: #2c3e50;
-    margin: 0 0 1rem 0;
-    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin: 0 0 0.7rem 0;
+    font-size: 1rem;
+    font-family: var(--font-mono);
 }
 
 .address {
-    color: #7f8c8d;
+    color: #b2c2d6;
     line-height: 1.5;
+    font-size: 0.95rem;
 }
 
 .back-button {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background-color: #3498db;
-    color: white;
+    background: var(--terminal-bg);
+    color: var(--secondary-color);
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
     margin-top: 2rem;
     text-align: center;
+    border: 1.5px solid var(--terminal-border);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 1px 8px var(--shadow-color);
 }
 
 .back-button:hover {
-    background-color: #2980b9;
+    background: var(--secondary-color);
+    color: var(--terminal-bg);
+    border-color: var(--terminal-border);
+    box-shadow: 0 1px 8px var(--shadow-color);
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
+        border-radius: 0;
     }
-
     .trip-header {
-        padding: 1.5rem;
+        padding: 1.2rem 1rem 1rem 1rem;
     }
-
+    .trip-header h2 {
+        font-size: 1.1rem;
+    }
     .trip-content {
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
-
     .location-cards {
         grid-template-columns: 1fr;
+        gap: 0.7rem;
+    }
+    .location-card {
+        padding: 0.8rem 0.8rem 0.7rem 0.8rem;
     }
 } 
